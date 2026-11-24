@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PVA">
+  <title>PVA — Polícia, Vítima e Assassino</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login" class="screen active">
+    <h1>Polícia, Vítima<br>e Assassino</h1>
+    <p class="tag">MVP online · 3 jogadores · 15 min</p>
+    <input id="nameInput" maxlength="16" placeholder="Seu nome" autocomplete="off">
+    <button id="joinBtn" type="button">Entrar na fila</button>
+    <p id="status" class="status"></p>
+  </div>
+
+  <div id="lobby" class="screen">
+    <h2>Aguardando jogadores…</h2>
+    <ul id="lobbyList"></ul>
+    <p class="hint">A partida começa quando houver 3.</p>
+  </div>
+
+  <div id="game" class="screen">
+    <header>
+      <div id="roleLabel" class="role">—</div>
+      <div id="timer" class="timer">15:00</div>
+    </header>
+    <div id="mapWrap"></div>
+    <div class="panel">
+      <div id="locName" class="loc-name">—</div>
+      <div id="here" class="here"></div>
+    </div>
+    <div id="actions" class="actions"></div>
+    <details class="clues" open>
+      <summary>Pistas <span id="clueCount">(0)</span></summary>
+      <ul id="clueList"></ul>
+    </details>
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <div id="endOverlay" class="end-overlay">
+    <div class="end-box">
+      <h2 id="endTitle">—</h2>
+      <p id="endReason"></p>
+      <button onclick="location.reload()" type="button">Jogar de novo</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
